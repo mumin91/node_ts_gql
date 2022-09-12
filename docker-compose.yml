@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://pguser:pgpassword@db/qdb
+  
+  db:
+    image: postgres:14.5
+    container_name: postgresdb
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_DB: qdb
+      POSTGRES_PASSWORD: 'pgpassword'
+    volumes:
+      - ntg_pg_db_data:/var/lib/postgresql/data
+
+volumes:
+  ntg_pg_db_data:
