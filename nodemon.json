@@ -1,0 +1,16 @@
+{
+    "ignore": [
+        ".git",
+        "node_modules",
+        "dist"
+    ],
+    "watch": [
+        "./src"
+    ], 
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "signal": "SIGTERM",
+    "ext": "ts" 
+}
+
