@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import { graphqlHTTP } from 'express-graphql';
 import { schema } from './schema';
 import pgDb from './db/pg';
-// import { graphqlHTTP } from 'express-graphql';
 
 
 async function main(): Promise<void> {
@@ -28,7 +27,7 @@ async function main(): Promise<void> {
   server.use(
     '/',
     graphqlHTTP({
-      schema,
+      schema:schema,
       // context: { pgApi },
       graphiql: true,
     })

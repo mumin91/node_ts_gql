@@ -9,7 +9,8 @@ const QuestionModel = pgDb.define('Question', {
         allowNull: false
     },
     publishDate: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
     }
 });
 
