@@ -22,7 +22,7 @@ services:
     environment:
       POSTGRES_USER: pguser
       POSTGRES_DB: qdb
-      POSTGRES_PASSWORD: 'pgpassword'
+      POSTGRES_PASSWORD: pgpassword
     volumes:
       - ntg_pg_db_data:/var/lib/postgresql/data
 
