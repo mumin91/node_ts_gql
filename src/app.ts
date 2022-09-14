@@ -28,7 +28,6 @@ async function main(): Promise<void> {
     '/',
     graphqlHTTP({
       schema:schema,
-      // context: { pgApi },
       graphiql: true,
     })
   );
