@@ -1,10 +1,6 @@
 import {
-  GraphQLSchema,
   GraphQLObjectType,
-  GraphQLString,
-  GraphQLInt,
   GraphQLNonNull,
-  printSchema,
   GraphQLList,
 } from 'graphql';
 import ChoiceModel from '../db/models/choice-model';
@@ -21,6 +17,7 @@ const QueryType = new GraphQLObjectType({
                 const questions = await QuestionModel.findAll({
                     attributes: ['id', 'text', 'publishDate'],
                     order: ['publishDate'],
+                    include: [ChoiceModel]
                 });
                 
                 const response = questions.map(question => {
