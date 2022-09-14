@@ -21,13 +21,11 @@ const QueryType = new GraphQLObjectType({
                 const questions = await QuestionModel.findAll({
                     attributes: ['id', 'text', 'publishDate'],
                     order: ['publishDate'],
-                    include: [ChoiceModel]
                 });
                 
                 const response = questions.map(question => {
                     return { ...question.toJSON(), choices: question.get("Choices") };
                 })
-                console.log(response);
 
                 return response;
             }
