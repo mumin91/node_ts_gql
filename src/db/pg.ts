@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 const pgDb = new Sequelize("qdb", "pguser", "pgpassword", {
-    host: "localhost",
+    host: "db",
     dialect: "postgres",
 });
 
